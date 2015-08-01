@@ -22,8 +22,16 @@ var ignorePaths='node_modules/electron-compile/node_modules/electron-compilers|n
 var electronVersion = jsonValue(prebuiltPackageJSONPath, 'version');
 var appName = jsonValue('package.json', 'appName');
 
+var iconPath;
 if (process.platform === 'win32') {
   compileCmd += '.cmd';
+  iconPath = path.join(".", "resources", "windows", "app.ico")
+}
+else if (process.platform === 'darwin') {
+  iconPath = path.join(".", "resources", "mac", "app.icns")
+}
+else if (process.platform === 'linux') {
+  iconPath = path.join(".", "resources", "linux")
 }
 
 var compile = proc.spawn(compileCmd, [], {stdio: 'inherit'});
@@ -38,6 +46,7 @@ compile.on('close', function() {
     '--platform', argv.platform,
     '--arch', argv.arch,
     '--version', electronVersion,
+    '--icon', iconPath,
     '--ignore', ignorePaths,
     '--out', buildOutputPath
   ];
