@@ -42,9 +42,9 @@ for(var arg in argv) {
   if (ignoreArgs.indexOf(arg) > -1) continue;
 
   if (argv[arg] === true)
-    defaultArgs.push('--' + arg)
+    args.push('--' + arg)
   else
-    defaultArgs.push('--' + arg, argv[arg])
+    args.push('--' + arg, argv[arg])
 }
 
 args = args.concat(argv._);
