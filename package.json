@@ -3,6 +3,7 @@
   "appName": "Sample",
   "version": "0.0.1",
   "main": "main.js",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/benogle/electron-sample.git"
