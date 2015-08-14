@@ -6,4 +6,4 @@ describe "Main", ->
     main = new Main()
 
   it "displays hello", ->
-    expect(main.element.textContent).toBe 'HELLO'
+    expect(main.element.textContent).toContain 'Hello World'
