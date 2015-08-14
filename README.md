@@ -3,7 +3,6 @@
 This is a sample app
 
 ```bash
-npm install # to install electron dependencies
 ./script/bootstrap
 ```
 
