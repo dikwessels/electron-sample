@@ -1,7 +1,5 @@
 # Electron Sample.app
 
-:no_entry_sign: this is a work in progress. It will change. Don't use it yet.
-
 This is a sample app
 
 ```bash
@@ -23,4 +21,4 @@ And when you're ready to build for release run:
 
 #### Magic
 
-![shot](https://cloud.githubusercontent.com/assets/69169/8764013/24ac8468-2d6f-11e5-9bc2-644577d710d4.png)
+![omghellotada](https://cloud.githubusercontent.com/assets/69169/9285656/f67f853e-429c-11e5-8f0d-bad9f6b16052.png)
