@@ -11,10 +11,9 @@ var prebuiltPackageJSONPath = path.join(prebuiltPath, "package.json");
 
 function jsonValue(path, value) { return JSON.parse(fs.readFileSync(path).toString())[value]; };
 
-var electronVersion = jsonValue(prebuiltPackageJSONPath, "version");
-
 var install = proc.spawn("npm", ["install"], {stdio: "inherit"});
 install.on('close', function() {
+  var electronVersion = jsonValue(prebuiltPackageJSONPath, "version");
   var args = [
     "--version", electronVersion,
     "--electron-prebuilt-dir", prebuiltPath,
