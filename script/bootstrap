@@ -13,12 +13,12 @@ function jsonValue(path, value) { return JSON.parse(fs.readFileSync(path).toStri
 
 var electronVersion = jsonValue(prebuiltPackageJSONPath, "version");
 
-proc.spawnSync("npm", ["install"], {stdio: "inherit"});
-
-var args = [
-  "--version", electronVersion,
-  "--electron-prebuilt-dir", prebuiltPath,
-  "--module-dir", modulePath
-];
-
-proc.spawn(rebuildPath, args, {stdio: "inherit"});
+var install = proc.spawn("npm", ["install"], {stdio: "inherit"});
+install.on('close', function() {
+  var args = [
+    "--version", electronVersion,
+    "--electron-prebuilt-dir", prebuiltPath,
+    "--module-dir", modulePath
+  ];
+  proc.spawn(rebuildPath, args, {stdio: "inherit"});
+})
