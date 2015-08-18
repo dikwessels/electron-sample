@@ -26,4 +26,4 @@ install.on('close', function() {
     "--module-dir", modulePath
   ];
   proc.spawn(rebuildPath, args, {stdio: "inherit"});
-})
+});
