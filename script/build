@@ -11,7 +11,7 @@ var argv = require('yargs')
 function jsonValue(path, value) { return JSON.parse(fs.readFileSync(path).toString())[value]; };
 
 var modulePath = path.join(".", "node_modules");
-var packagerCmd = path.join(modulePath, ".bin", "electron-packager");
+var packagerCmd = path.join(modulePath, "electron-packager", "cli.js");
 var prebuiltPath = path.join(modulePath, "electron-prebuilt");
 var prebuiltPackageJSONPath = path.join(prebuiltPath, "package.json");
 var buildOutputPath = path.join(".", "release");
@@ -24,7 +24,6 @@ var appName = jsonValue('package.json', 'appName');
 
 if (process.platform === 'win32') {
   compileCmd += '.cmd';
-  packagerCmd += '.cmd';
 }
 
 var compile = proc.spawn(compileCmd, [], {stdio: 'inherit'});
@@ -32,6 +31,7 @@ compile.on('close', function() {
   console.log('Building ', appName);
 
   var args = [
+    packagerCmd,
     './',
     appName,
     '--overwrite',
@@ -53,5 +53,5 @@ compile.on('close', function() {
   }
 
   args = args.concat(argv._);
-  proc.spawn(packagerCmd, args, {stdio: 'inherit'});
+  proc.spawn(process.execPath, args, {stdio: 'inherit'});
 });
