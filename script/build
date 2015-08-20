@@ -22,9 +22,9 @@ var ignorePaths='node_modules/electron-compile/node_modules/electron-compilers|n
 var electronVersion = jsonValue(prebuiltPackageJSONPath, 'version');
 var appName = jsonValue('package.json', 'appName');
 
-if (process.platform === 'win32') {
-  compileCmd += '.cmd';
-}
+// if (process.platform === 'win32') {
+//   compileCmd += '.cmd';
+// }
 
 var iconPath;
 if (argv.platform === 'win32') {
