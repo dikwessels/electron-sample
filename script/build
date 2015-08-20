@@ -25,7 +25,7 @@ var appName = jsonValue('package.json', 'appName');
 var iconPath;
 if (argv.platform === 'win32') {
   compileCmd += '.cmd';
-  iconPath = path.join(".", "resources", "windows", "app.ico")
+  iconPath = path.join(".", "resources", "win", "app.ico")
 }
 else if (argv.platform === 'darwin') {
   iconPath = path.join(".", "resources", "mac", "app.icns")
