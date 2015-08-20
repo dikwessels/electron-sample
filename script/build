@@ -22,15 +22,19 @@ var ignorePaths='node_modules/electron-compile/node_modules/electron-compilers|n
 var electronVersion = jsonValue(prebuiltPackageJSONPath, 'version');
 var appName = jsonValue('package.json', 'appName');
 
-var iconPath;
 if (process.platform === 'win32') {
+  compileCmd += '.cmd';
+}
+
+var iconPath;
+if (argv.platform === 'win32') {
   compileCmd += '.cmd';
   iconPath = path.join(".", "resources", "windows", "app.ico")
 }
-else if (process.platform === 'darwin') {
+else if (argv.platform === 'darwin') {
   iconPath = path.join(".", "resources", "mac", "app.icns")
 }
-else if (process.platform === 'linux') {
+else if (argv.platform === 'linux') {
   iconPath = path.join(".", "resources", "linux")
 }
 
