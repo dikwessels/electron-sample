@@ -10,6 +10,10 @@ var compileCachepath = path.join(".", "compile-cache");
 
 console.log("Compiling...");
 
+if (process.platform === 'win32') {
+  compilerPath += '.cmd';
+}
+
 var args = [
   "--target", compileCachepath,
   pathToCompile
