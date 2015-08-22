@@ -1,3 +1,4 @@
+ # These modules are provided by electron
 BrowserWindow = require 'browser-window'
 app = require 'app'
 Menu = require 'menu'

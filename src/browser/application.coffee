@@ -1,5 +1,5 @@
 ApplicationWindow = require './application-window'
-app = require('app')
+app = require('app') # provided by electron
 
 module.exports =
 class Application
