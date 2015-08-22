@@ -3,7 +3,7 @@ app = require('app')
 
 module.exports =
 class Application
-  win: null
+  window: null
 
   constructor: (options) ->
     global.application = this
@@ -17,6 +17,6 @@ class Application
 
   openWindow: ->
     htmlURL = "file://#{__dirname}/../main-window/index.html"
-    @win = new ApplicationWindow htmlURL,
+    @window = new ApplicationWindow htmlURL,
       width: 1200,
       height: 800
