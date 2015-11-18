@@ -1,4 +1,4 @@
-Main = require '../../src/main-window/main'
+Main = require '../../src/renderer/main'
 
 describe "Main", ->
   [main] = []

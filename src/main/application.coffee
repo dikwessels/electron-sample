@@ -16,7 +16,7 @@ class Application
     app.on 'ready', => @openWindow()
 
   openWindow: ->
-    htmlURL = "file://#{__dirname}/../main-window/index.html"
+    htmlURL = "file://#{__dirname}/../renderer/index.html"
     @window = new ApplicationWindow htmlURL,
       width: 1200,
       height: 800

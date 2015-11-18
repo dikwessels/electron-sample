@@ -18,6 +18,6 @@ else {
     require('electron-compile').init()
   }
 
-  var Application = require('./src/browser/application')
+  var Application = require('./src/main/application')
   new Application
 }
